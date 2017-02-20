@@ -30,12 +30,11 @@ public class MyParallelTask : ChildNode, ParentNode {
 
     public void deaktivieren()
     {
-        int count = 0;
-        while(activeChildren.Count > 0)
+        Debug.Log("ParallelTask deaktiviert");
+        for (int i = 0; i < children.Count; i++)
         {
-            activeChildren[count].deaktivieren();
-            activeChildren.RemoveAt(count);
-            count++;
+            activeChildren[0].deaktivieren();
+            activeChildren.RemoveAt(0);
         }
     }
 

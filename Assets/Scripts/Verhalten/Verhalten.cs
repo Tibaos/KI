@@ -59,6 +59,7 @@ public class Verhalten : MonoBehaviour, ParentNode {
 
     public void startZwei()
     {
+        Debug.Log("starte verhalten");
         if (root != null)
         {
             root.aktivieren();

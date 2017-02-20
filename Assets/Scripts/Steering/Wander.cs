@@ -50,7 +50,16 @@ public class Wander : TaskNode{
             wanderTransform.Rotate(new Vector3(0.0f, 1.0f, 0.0f), wandererAngle);
 
             wanderRigidbody.velocity = wanderTransform.forward;
+
+            if (wanderTransform.position.z < -10 || wanderTransform.position.z > 10 || wanderTransform.position.x > 10 || wanderTransform.position.x < -10)
+            {
+                deaktivieren();
+                parent.childTerminated(this, true);
+                wanderRigidbody.velocity = new Vector3(0, 0, 0);
+            }
         }
+
+        
     }
 
     public void aktivieren()

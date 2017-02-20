@@ -43,9 +43,9 @@ public class Seek : TaskNode {
 
             seekerRigidbody.velocity = seekerTransform.forward;
 
-            if(direction.magnitude < 3)
+            if(direction.magnitude < 2)
             {
-                seekerRigidbody.velocity = new Vector3(0, 0, 0);
+                seekerRigidbody.velocity = new Vector3(0, 0.6f, 0);
                 parent.childTerminated(this, true);
                 deaktivieren();
             }
